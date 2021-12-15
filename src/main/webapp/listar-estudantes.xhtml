@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+	<link rel="stylesheet"
+		href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+		integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
+		crossorigin="anonymous"></link>
+		
+		<title>Listar Estudantes</title>
+</h:head>
+<h:body>
+
+	
+		<h:outputLink styleClass="text-center btn btn-primary" value="novoestudante.xhtml">Novo Estudante</h:outputLink>
+	
+
+
+	<div class="container">
+		<h:form>
+
+			<h:dataTable value="#{estudanteController.todosEstudantes()}"
+				var="estudante" styleClass="table table-striped">
+
+				<h:column>
+					<f:facet name="header">Id</f:facet>
+					#{estudante.id}
+				</h:column>
+
+				<h:column>
+					<f:facet name="header">Nome</f:facet>
+					#{estudante.nome}
+				</h:column>
+
+				<h:column>
+					<f:facet name="header">Email</f:facet>
+
+					#{estudante.email}
+				</h:column>
+
+				<h:column>
+					<!-- the column header -->
+					<f:facet name="header">Alterar</f:facet>
+					<!--  the value for each row -->
+					<h:commandLink value="Alterar"
+						action="#{estudanteController.consultarEstudante(estudante.id)}" />
+				</h:column>
+
+
+				<h:column>
+					<h:commandLink value="Remover"
+						onclick="if (!confirm('Voce tem certeza que deseja remover este estudante?')) return false"
+						action="#{estudanteController.removerEstudante(estudante.id)}" />
+				</h:column>
+
+			</h:dataTable>
+		</h:form>
+
+
+
+
+
+	</div>
+
+	<script
+		src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+		crossorigin="anonymous"></script>
+</h:body>
+
+</html>
