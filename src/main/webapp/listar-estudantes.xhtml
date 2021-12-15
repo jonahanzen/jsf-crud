@@ -9,14 +9,15 @@
 		href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
 		integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
 		crossorigin="anonymous"></link>
-		
-		<title>Listar Estudantes</title>
+
+	<title>Listar Estudantes</title>
 </h:head>
 <h:body>
 
-	
-		<h:outputLink styleClass="text-center btn btn-primary" value="novoestudante.xhtml">Novo Estudante</h:outputLink>
-	
+
+	<h:outputLink styleClass="text-center btn btn-primary"
+		value="novoestudante.xhtml">Novo Estudante</h:outputLink>
+
 
 
 	<div class="container">
@@ -42,9 +43,7 @@
 				</h:column>
 
 				<h:column>
-					<!-- the column header -->
 					<f:facet name="header">Alterar</f:facet>
-					<!--  the value for each row -->
 					<h:commandLink value="Alterar"
 						action="#{estudanteController.consultarEstudante(estudante.id)}" />
 				</h:column>

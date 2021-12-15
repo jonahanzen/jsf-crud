@@ -5,7 +5,7 @@ Do mais, é o meu primeiro contato com o framework, e entendo que há muito o qu
 
 ###  Ferramentas utilizadas
 
-Java SE 11, JakartaEE 8, PostgreSQL, Maven, WildFly, ASM 9.2, Hibernate, JSF 2.1.7
+Java SE 11, JakartaEE 8, PostgreSQL, Maven, WildFly, Hibernate, JSF 2.1.7
 
 O projeto está dividido em camadas de forma que:
 
